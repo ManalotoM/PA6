@@ -1,5 +1,17 @@
 public class ListQueue implements QueueInterface{
 
+    // fields
+
+    // constructor
+    public ListQueue() {
+        ;
+    }
+
+    // copy constructor
+    public ListQueue(ListQueue copy) {
+        ;
+    }
+
     @Override
     public void enqueuez(int value) {
         // TODO Auto-generated method stub
@@ -36,10 +48,10 @@ public class ListQueue implements QueueInterface{
 
     }
     
-    // @Override
-    // public boolean equals() {
-    //     return false;
-    // }
+    @Override
+    public boolean equals(Object o) {
+        return false;
+    }
 
     // format: "{0,1,2,3,4,5}"
     @Override

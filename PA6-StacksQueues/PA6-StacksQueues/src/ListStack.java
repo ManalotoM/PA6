@@ -7,7 +7,7 @@ public class ListStack implements StackInterface {
     // constructor
     public ListStack() {
         front = null;
-        front.next = null;
+        // front.next = null;
         size = 0;
     }
 
@@ -26,8 +26,18 @@ public class ListStack implements StackInterface {
 
     @Override
     public void push(int value) {
-        // TODO Auto-generated method stub
-
+        if (size == 0) {
+            front.data = value;
+        } else if(size == 1) {
+            front.next.data = value;
+        } else {
+            ListNode cur = front;
+            ListNode next = front.next;
+            while (cur.next != null) {
+                ;
+            }
+        }
+        size++;
     }
 
     @Override
@@ -60,10 +70,10 @@ public class ListStack implements StackInterface {
 
     }
     
-    // @Override
-    // public boolean equals() {
-    //     return false;
-    // }
+    @Override
+    public boolean equals(Object ls) {
+        return false;
+    }
 
     // format: "{0,1,2,3,4,5}"
     @Override

@@ -3,16 +3,16 @@ public class Main {
         // System.out.println("peepeepoopoo");
 
         // -------------ArrayStack tests-------------------------
-        ArrayStack arr = new ArrayStack();
-        arr.push(2);
-        arr.push(1);
-        arr.push(10);
-        arr.push(19);
-        System.out.println(arr.toString());
-        int popped = arr.pop();
-        System.out.println(arr.toString());
-        System.out.println("popped element: " + popped);
-        System.out.println(arr.equals(arr));
+        // ArrayStack arr = new ArrayStack();
+        // arr.push(2);
+        // arr.push(1);
+        // arr.push(10);
+        // arr.push(19);
+        // System.out.println(arr.toString());
+        // int popped = arr.pop();
+        // System.out.println(arr.toString());
+        // System.out.println("popped element: " + popped);
+        // System.out.println(arr.equals(arr));
         // System.out.println("peek " + arr.peek());
 
         // -------------ArrayQueue tests-------------------------
@@ -36,7 +36,7 @@ public class Main {
         // System.out.println(q.toString());
 
         // -------------ArrayList tests-------------------------
-
-
+        ListStack ls = new ListStack();
+        // ls.push(1);
     }
 }

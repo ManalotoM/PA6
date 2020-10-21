@@ -83,11 +83,11 @@ public class ArrayQueue implements QueueInterface {
         queue = newQueue;
     }
 
-    // TODO implement equals method
-    // @Override
-    // public boolean equals() {
-    //     return false;
-    // }
+    @Override
+    public boolean equals(Object o) {
+        // TODO finish this
+        return false;
+    }
 
     // format: "{0,1,2,3,4,5}"
     @Override

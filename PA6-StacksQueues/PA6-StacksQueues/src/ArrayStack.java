@@ -84,7 +84,6 @@ public class ArrayStack implements StackInterface{
         stack = newStack;
     }
     
-    // TODO I NEED HELP
     @Override
     public boolean equals(Object arr) {
         if (arr instanceof ArrayStack) {
