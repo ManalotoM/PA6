@@ -43,11 +43,15 @@ public class ArrayStack implements StackInterface{
 
     @Override
     public int pop() {
+        if (size == 0) {
+            return -1;
+        }
         int popped = stack[size - 1];
         int[] newStack = new int[size - 1];
         for (int i = 0; i < size - 1; i++) {
             newStack[i] = stack[i];
         }
+        size--;
         stack = newStack;
         return popped;
     }
@@ -81,23 +85,23 @@ public class ArrayStack implements StackInterface{
     }
     
     // TODO I NEED HELP
-    // @Override
-    // public boolean equals(ArrayStack arr) {
-    //     if (arr instanceof ArrayStack) {
-    //         ArrayStack myStack = (ArrayStack) arr;
-    //         if (size == myStack.size) {
-    //             for (int i = 0; i < size; i++) {
-    //                 if (stack[i] != myStack.stack[i]) {
-    //                     return false;
-    //                 }
-    //             }
-    //             return true;
-    //         } else {
-    //             return false;
-    //         }
-    //     }
-    //     return false;
-    // }
+    @Override
+    public boolean equals(Object arr) {
+        if (arr instanceof ArrayStack) {
+            ArrayStack myStack = (ArrayStack) arr;
+            if (size == myStack.size) {
+                for (int i = 0; i < size; i++) {
+                    if (stack[i] != myStack.stack[i]) {
+                        return false;
+                    }
+                }
+                return true;
+            } else {
+                return false;
+            }
+        }
+        return false;
+    }
 
     // format: "{0,1,2,3,4,5}"
     @Override

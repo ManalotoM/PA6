@@ -43,34 +43,47 @@ public class ArrayQueue implements QueueInterface {
 
     @Override
     public int dequeue() {
-        // TODO Auto-generated method stub
-        return 0;
+        if (size == 0) {
+            return -1;
+        }
+        int byebye = queue[0];
+        int[] newQueue = new int[size - 1];
+        for (int i = 1; i < size; i++) {
+            newQueue[i-1] = queue[i];
+        }
+        queue = newQueue;
+        return byebye;
     }
 
     @Override
     public int peek() {
-        // TODO Auto-generated method stub
-        return 0;
+        if (size == 0) {
+            return -1;
+        }
+        return queue[0];
     }
 
     @Override
     public boolean isEmpty() {
-        // TODO Auto-generated method stub
+        if (size == 0) {
+            return true;
+        }
         return false;
     }
 
     @Override
     public int size() {
-        // TODO Auto-generated method stub
-        return 0;
+        return size;
     }
 
     @Override
     public void clear() {
-        // TODO Auto-generated method stub
-
+        int[] newQueue = new int[0];
+        size = 0;
+        queue = newQueue;
     }
 
+    // TODO implement equals method
     // @Override
     // public boolean equals() {
     //     return false;
@@ -79,6 +92,14 @@ public class ArrayQueue implements QueueInterface {
     // format: "{0,1,2,3,4,5}"
     @Override
     public String toString() {
-        return "";
+        String s = "{";
+        for (int i = 0; i < queue.length; i++) {
+            if (i == queue.length - 1) {
+                s += String.valueOf(queue[i]);
+            } else {
+                s += String.valueOf(queue[i]) + ",";
+            }
+        }
+        return s + "}";
     }
 }

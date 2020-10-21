@@ -1,5 +1,29 @@
 public class ListStack implements StackInterface {
 
+    // fields
+    private ListNode front;
+    int size;
+
+    // constructor
+    public ListStack() {
+        front = null;
+        front.next = null;
+        size = 0;
+    }
+
+    // copy constructor
+    public ListStack(ListStack copy) {
+        front = copy.front;
+        size = copy.size;
+        ListNode cur = copy.front;
+        ListNode next = front;
+        while (cur.next != null) {
+            next.next = cur.next;
+            next = next.next;
+            cur = cur.next;
+        }
+    }
+
     @Override
     public void push(int value) {
         // TODO Auto-generated method stub
@@ -45,6 +69,24 @@ public class ListStack implements StackInterface {
     @Override
     public String toString() {
         return "";
+    }
+
+    private class ListNode {
+        private int data;
+        private ListNode next;
+
+        public ListNode(int data, ListNode next) {
+            this.data = data;
+            this.next = next;
+        }
+
+        public ListNode(int data) {
+            this(data, null);
+        }
+
+        public ListNode() {
+            this(0, null);
+        }
     }
     
 }
