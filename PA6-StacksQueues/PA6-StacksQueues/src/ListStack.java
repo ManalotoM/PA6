@@ -26,16 +26,15 @@ public class ListStack implements StackInterface {
 
     @Override
     public void push(int value) {
+        ListNode newNode = new ListNode(value);
         if (size == 0) {
-            front.data = value;
-        } else if(size == 1) {
-            front.next.data = value;
+            front = newNode;
         } else {
             ListNode cur = front;
-            ListNode next = front.next;
             while (cur.next != null) {
-                ;
+                cur = cur.next;
             }
+            cur.next = newNode;
         }
         size++;
     }
@@ -78,7 +77,20 @@ public class ListStack implements StackInterface {
     // format: "{0,1,2,3,4,5}"
     @Override
     public String toString() {
-        return "";
+        String s = "{";
+        ListNode cur = front;
+        if (size == 1) {
+            return s + cur.data + "}";
+        }
+        while (cur != null) {
+            if (cur.next == null) {
+                s += String.valueOf(cur.data);
+            } else {
+                s += String.valueOf(cur.data) + ",";
+            }
+            cur = cur.next;
+        }
+        return s + "}";
     }
 
     private class ListNode {
