@@ -1,8 +1,8 @@
 public class ListQueue implements QueueInterface{
 
     // fields
-    private ListNode head;
-    private ListNode tail;
+    private ListNode1 head;
+    private ListNode1 tail;
     private int size;
 
     // constructor
@@ -36,11 +36,11 @@ public class ListQueue implements QueueInterface{
     public void enqueuez(int value) {
         if (head == null) {
             // queue is empty
-            ListNode node = new ListNode(value, null);
+            ListNode1 node = new ListNode1(value);
             head = tail = node;
         } else {
-            ListNode oldHead = head;
-            head = new ListNode(value, oldHead);
+            ListNode1 oldHead = head;
+            head = new ListNode1(value, oldHead);
         }
         
         size+=1;
@@ -50,14 +50,15 @@ public class ListQueue implements QueueInterface{
     public int dequeue() {
         if (size == 0) return -1;
 
-        ListNode currentNode = head;
-        ListNode previousNode = head;
+        ListNode1 currentNode = head;
+        ListNode1 previousNode = head;
         while (currentNode.next != null)
         {
             previousNode = currentNode;
             currentNode = currentNode.next;            
         }
         tail = previousNode;
+        tail.next = null;
         size -= 1;
         return currentNode.data;
     }
@@ -87,12 +88,46 @@ public class ListQueue implements QueueInterface{
     
     @Override
     public boolean equals(Object o) {
-        return false;
-    }
+        if (!(o instanceof ListQueue)) return false;
 
-    // format: "{0,1,2,3,4,5}"
+        ListQueue queue = (ListQueue) o;
+        if (queue.size != size) return false;
+
+        String myQueue = this.toString();
+        String inputQueue = this.toString();
+        
+        return myQueue.equals(inputQueue);
+    }
     @Override
     public String toString() {
-        return "";
+        if (size == 0) return "{}";
+        String text = "}";
+
+        ListNode1 currentNode = head;
+        text = currentNode.data + text;
+        while(currentNode.next != null) {
+            currentNode = currentNode.next;
+            text = currentNode.data + "," + text;
+        }
+        text = "{" + text;
+        return text;
+    }
+
+    private class ListNode1 {
+        int data;
+        ListNode1 next;
+
+        public ListNode1(int data, ListNode1 next) {
+            this.data = data;
+            this.next = next;
+        }
+
+        public ListNode1(int data) {
+            this(data, null);
+        }
+
+        public ListNode1() {
+            this(0, null);
+        }
     }
 }

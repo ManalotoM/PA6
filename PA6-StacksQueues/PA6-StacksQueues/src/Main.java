@@ -36,6 +36,31 @@ public class Main {
         // System.out.println(q.toString());
 
         // -------------ListStack tests-------------------------
+        // -------------ArrayList tests-------------------------
+        // ListStack ls = new ListStack();
+        // ls.push(1);
+
+        // -------------ListQueue tests-------------------------
+        ListQueue lq = new ListQueue();
+        lq.enqueuez(1);
+        lq.enqueuez(9);
+        lq.enqueuez(3);
+
+        ListQueue lq2 = new ListQueue();
+        lq2.enqueuez(1);
+        lq2.enqueuez(9);
+        lq2.enqueuez(3);
+        System.out.println(("lq.equals(lq2) should be true: " + lq.equals(lq2)));
+
+        System.out.println(lq.toString());
+        System.out.println("dequeue: " + lq.dequeue());
+        System.out.println(lq.toString());
+        System.out.println("dequeue: " + lq.dequeue());
+        System.out.println(lq.toString());
+        System.out.println("dequeue: " + lq.dequeue());
+        System.out.println(lq.toString());
+
+        
         ListStack ls = new ListStack();
         ls.push(1);
         ls.push(2);
