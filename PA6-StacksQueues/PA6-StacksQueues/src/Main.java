@@ -37,6 +37,9 @@ public class Main {
 
         // -------------ArrayList tests-------------------------
         ListStack ls = new ListStack();
-        // ls.push(1);
+        ls.push(1);
+        ls.push(2);
+        ls.push(3);
+        System.out.println(ls.toString());
     }
 }

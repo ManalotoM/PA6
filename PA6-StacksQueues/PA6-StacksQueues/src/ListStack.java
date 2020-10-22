@@ -92,23 +92,4 @@ public class ListStack implements StackInterface {
         }
         return s + "}";
     }
-
-    private class ListNode {
-        private int data;
-        private ListNode next;
-
-        public ListNode(int data, ListNode next) {
-            this.data = data;
-            this.next = next;
-        }
-
-        public ListNode(int data) {
-            this(data, null);
-        }
-
-        public ListNode() {
-            this(0, null);
-        }
-    }
-    
 }
