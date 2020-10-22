@@ -36,7 +36,14 @@ public class Main {
         // System.out.println(q.toString());
 
         // -------------ArrayList tests-------------------------
-        ListStack ls = new ListStack();
+        // ListStack ls = new ListStack();
         // ls.push(1);
+
+        // -------------ListQueue tests-------------------------
+        ListQueue lq = new ListQueue();
+        lq.enqueuez(1);
+        lq.enqueuez(9);
+        lq.enqueuez(3);
+        System.out.println(lq.toString());
     }
 }

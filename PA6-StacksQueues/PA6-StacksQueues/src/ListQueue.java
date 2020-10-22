@@ -89,10 +89,34 @@ public class ListQueue implements QueueInterface{
     public boolean equals(Object o) {
         return false;
     }
-
-    // format: "{0,1,2,3,4,5}"
     @Override
     public String toString() {
-        return "";
+        if (size == 0) return "{}";
+        String text = "}";
+
+        ListNode currentNode = head;
+        text = currentNode.data + text;
+        while(currentNode.next != null) {
+            currentNode = currentNode.next;
+            text = currentNode.data + "," + text;
+        }
+        text = "{" + text;
+        return text;
     }
+
+    // format: "{0,1,2,3,4,5}"
+    // @Override
+    // public String toString() {
+    //     if (size == 0) return "{}";
+    //     String text = "{";
+
+    //     ListNode currentNode = head;
+    //     text += currentNode.data;
+    //     while(currentNode.next != null) {
+    //         currentNode = currentNode.next;
+    //         text += "," + currentNode.data;
+    //     }
+    //     text += "}";
+    //     return text;
+    // }
 }
