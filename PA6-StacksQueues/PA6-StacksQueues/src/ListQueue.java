@@ -88,7 +88,15 @@ public class ListQueue implements QueueInterface{
     
     @Override
     public boolean equals(Object o) {
-        return false;
+        if (!(o instanceof ListQueue)) return false;
+
+        ListQueue queue = (ListQueue) o;
+        if (queue.size != size) return false;
+
+        String myQueue = this.toString();
+        String inputQueue = this.toString();
+        
+        return myQueue.equals(inputQueue);
     }
     @Override
     public String toString() {
@@ -104,6 +112,7 @@ public class ListQueue implements QueueInterface{
         text = "{" + text;
         return text;
     }
+
     private class ListNode1 {
         int data;
         ListNode1 next;
