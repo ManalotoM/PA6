@@ -36,6 +36,23 @@ public class Main {
         // System.out.println(q.toString());
 
         // -------------ListStack tests-------------------------
+        // ListStack ls = new ListStack();
+        // ls.push(1);
+        // ls.push(2);
+        // ls.push(3);
+        // System.out.println(ls.toString());
+        // int popped = ls.pop();
+        // System.out.println(ls.toString());
+        // System.out.println(popped);
+        // System.out.println(ls.peek());
+        // System.out.println(ls.isEmpty());
+        // ListStack ls2 = new ListStack();
+        // System.out.println(ls2.isEmpty());
+        // System.out.println(ls.size());
+        
+        // ls.clear();
+        // System.out.println(ls.toString());
+        // System.out.println(ls2.equals(ls2));
         // -------------ArrayList tests-------------------------
         // ListStack ls = new ListStack();
         // ls.push(1);
@@ -60,24 +77,8 @@ public class Main {
         System.out.println("dequeue: " + lq.dequeue());
         System.out.println(lq.toString());
 
+
         
-        ListStack ls = new ListStack();
-        ls.push(1);
-        ls.push(2);
-        ls.push(3);
-        System.out.println(ls.toString());
-        int popped = ls.pop();
-        System.out.println(ls.toString());
-        System.out.println(popped);
-        System.out.println(ls.peek());
-        System.out.println(ls.isEmpty());
-        ListStack ls2 = new ListStack();
-        System.out.println(ls2.isEmpty());
-        System.out.println(ls.size());
-        
-        ls.clear();
-        System.out.println(ls.toString());
-        System.out.println(ls2.equals(ls2));
         
         
         
