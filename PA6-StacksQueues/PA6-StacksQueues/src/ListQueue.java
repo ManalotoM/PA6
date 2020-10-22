@@ -98,6 +98,7 @@ public class ListQueue implements QueueInterface{
         
         return myQueue.equals(inputQueue);
     }
+    
     @Override
     public String toString() {
         if (size == 0) return "{}";

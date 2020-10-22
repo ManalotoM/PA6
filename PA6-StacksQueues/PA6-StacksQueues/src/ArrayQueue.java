@@ -85,8 +85,15 @@ public class ArrayQueue implements QueueInterface {
 
     @Override
     public boolean equals(Object o) {
-        // TODO finish this
-        return false;
+        if (!(o instanceof ArrayQueue)) return false;
+
+        ArrayQueue queue = (ArrayQueue) o;
+        if (queue.size != size) return false;
+
+        String myQueue = this.toString();
+        String inputQueue = this.toString();
+
+        return myQueue.equals(inputQueue);
     }
 
     // format: "{0,1,2,3,4,5}"
