@@ -36,6 +36,7 @@ public class Main {
         // System.out.println(q.toString());
 
         // -------------ArrayList tests-------------------------
+<<<<<<< HEAD
         // ListStack ls = new ListStack();
         // ls.push(1);
 
@@ -45,5 +46,12 @@ public class Main {
         lq.enqueuez(9);
         lq.enqueuez(3);
         System.out.println(lq.toString());
+=======
+        ListStack ls = new ListStack();
+        ls.push(1);
+        ls.push(2);
+        ls.push(3);
+        System.out.println(ls.toString());
+>>>>>>> 005677c7800096fdfd6470f7b118162ffdba5ac2
     }
 }
