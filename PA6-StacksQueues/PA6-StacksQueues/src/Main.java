@@ -17,9 +17,9 @@ public class Main {
 
         // -------------ArrayQueue tests-------------------------
         // ArrayQueue q = new ArrayQueue();
-        // q.enqueuez(1);
-        // q.enqueuez(9);
-        // q.enqueuez(3);
+        // q.enqueue(1);
+        // q.enqueue(9);
+        // q.enqueue(3);
         // System.out.println(q.toString());
 
         // int bye = q.dequeue();
@@ -58,29 +58,23 @@ public class Main {
         // ls.push(1);
 
         // -------------ListQueue tests-------------------------
-        ListQueue lq = new ListQueue();
-        lq.enqueuez(1);
-        lq.enqueuez(9);
-        lq.enqueuez(3);
+        // ListQueue lq = new ListQueue();
+        // lq.enqueue(1);
+        // lq.enqueue(9);
+        // lq.enqueue(3);
 
-        ListQueue lq2 = new ListQueue();
-        lq2.enqueuez(1);
-        lq2.enqueuez(9);
-        lq2.enqueuez(3);
-        System.out.println(("lq.equals(lq2) should be true: " + lq.equals(lq2)));
+        // ListQueue lq2 = new ListQueue();
+        // lq2.enqueue(1);
+        // lq2.enqueue(9);
+        // lq2.enqueue(3);
+        // System.out.println(("lq.equals(lq2) should be true: " + lq.equals(lq2)));
 
-        System.out.println(lq.toString());
-        System.out.println("dequeue: " + lq.dequeue());
-        System.out.println(lq.toString());
-        System.out.println("dequeue: " + lq.dequeue());
-        System.out.println(lq.toString());
-        System.out.println("dequeue: " + lq.dequeue());
-        System.out.println(lq.toString());
-
-
-        
-        
-        
-        
+        // System.out.println(lq.toString());
+        // System.out.println("dequeue: " + lq.dequeue());
+        // System.out.println(lq.toString());
+        // System.out.println("dequeue: " + lq.dequeue());
+        // System.out.println(lq.toString());
+        // System.out.println("dequeue: " + lq.dequeue());
+        // System.out.println(lq.toString());    
     }
 }

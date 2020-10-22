@@ -1,3 +1,44 @@
+/*
+AUTHOR: Mark Manaloto
+FILE: ListQueue.java
+ASSIGNMENT: PA6 - Stacks and Queues
+COURSE: CSC 210
+PURPOSE: This program implements the QueueInterface using the linked list data structure.
+    The ListStack has the fields of an array and a size, and contains the methods enqueue,
+    dequeue, peek, isEmpty, size, clear, equals, and toString. The program also has a
+    nested ListNode class, which allows the user to create a singly linked list.
+
+    USAGE EXAMPLE:
+    ListQueue lq = new ListQueue();
+    lq.enqueue(1);
+    lq.enqueue(9);
+    lq.enqueue(3);
+
+    ListQueue lq2 = new ListQueue();
+    lq2.enqueue(1);
+    lq2.enqueue(9);
+    lq2.enqueue(3);
+    System.out.println(("lq.equals(lq2) should be true: " + lq.equals(lq2)));
+
+    System.out.println(lq.toString());
+    System.out.println("dequeue: " + lq.dequeue());
+    System.out.println(lq.toString());
+    System.out.println("dequeue: " + lq.dequeue());
+    System.out.println(lq.toString());
+    System.out.println("dequeue: " + lq.dequeue());
+    System.out.println(lq.toString());
+    
+    OUTPUT:
+    lq.equals(lq2) should be true: true
+    {1,9,3}   
+    dequeue: 1
+    {9,3}
+    dequeue: 9
+    {3}
+    dequeue: 3
+    {}
+*/
+
 public class ListQueue implements QueueInterface{
 
     // fields
@@ -27,13 +68,13 @@ public class ListQueue implements QueueInterface{
         do {
             value = queue.dequeue();
             if (value != -1) {
-                enqueuez(value);
+                enqueue(value);
             }
         } while (value != -1);
     }
 
     @Override
-    public void enqueuez(int value) {
+    public void enqueue(int value) {
         if (head == null) {
             // queue is empty
             ListNode1 node = new ListNode1(value);
@@ -98,7 +139,7 @@ public class ListQueue implements QueueInterface{
         
         return myQueue.equals(inputQueue);
     }
-    
+
     @Override
     public String toString() {
         if (size == 0) return "{}";

@@ -1,3 +1,44 @@
+/*
+AUTHOR: Mark Manaloto
+FILE: ListStack.java
+ASSIGNMENT: PA6 - Stacks and Queues
+COURSE: CSC 210
+PURPOSE: This program implements the StackInterface using the linked list data structure.
+    The ListStack has the fields of an ListNode front and a size, and contains the methods
+    push, pop, peek, isEmpty, size, clear, equals, and toString. The program also has a
+    nested ListNode class, which allows the user to create a singly linked list.
+    
+    USAGE EXAMPLE:
+    ListStack ls = new ListStack();
+    ls.push(1);
+    ls.push(2);
+    ls.push(3);
+    System.out.println(ls.toString());
+    int popped = ls.pop();
+    System.out.println(ls.toString());
+    System.out.println(popped);
+    System.out.println(ls.peek());
+    System.out.println(ls.isEmpty());
+    ListStack ls2 = new ListStack();
+    System.out.println(ls2.isEmpty());
+    System.out.println(ls.size());
+        
+    ls.clear();
+    System.out.println(ls.toString());
+    System.out.println(ls2.equals(ls2));
+
+    OUTPUT:
+    {1,2,3}
+    {1,2}
+    3
+    2
+    false
+    true
+    2
+    {}
+    true
+*/
+
 public class ListStack implements StackInterface {
 
     // fields
@@ -94,27 +135,18 @@ public class ListStack implements StackInterface {
         size = 0;
     }
 
-    // @Override
-    // public boolean equals(Object ls) {
-    //     if (ls instanceof ListStack) {
-    //         ListStack myStack = (ListStack) ls;
-    //         if (size == myStack.size) {
-    //             ListNode cur = myStack.front;
-    //             ListNode cur1 = ((ListStack)ls).front;
-    //             while (cur.next != null) {
-    //                 if (cur != cur1) {
-    //                     return false;
-    //                 }
-    //                 cur = cur.next;
-    //                 cur1 = cur1.next;
-    //             }
-    //             return true;
-    //         } else {
-    //             return false;
-    //         }
-    //     }
-    //     return false;
-    // }
+    @Override
+    public boolean equals(Object o) {
+        if (!(o instanceof ListStack)) return false;
+
+        ListStack stack = (ListStack) o;
+        if (stack.size != size) return false;
+
+        String myStack = this.toString();
+        String inputStack = this.toString();
+
+        return myStack.equals(inputStack);
+    }
 
     // format: "{0,1,2,3,4,5}"
     @Override

@@ -3,7 +3,7 @@ interface QueueInterface {
     /*
      * Add an element to the back of the queue.
      */
-    void enqueuez(int value);
+    void enqueue(int value);
 
     /*
      * Remove and return the front element in the queue.

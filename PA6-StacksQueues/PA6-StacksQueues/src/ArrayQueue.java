@@ -1,3 +1,42 @@
+/*
+AUTHOR: Mark Manaloto
+FILE: ArrayQueue.java
+ASSIGNMENT: PA6 - Stacks and Queues
+COURSE: CSC 210
+PURPOSE: This program implements the QueueInterface using the array data structure.
+    The ListStack has the fields of an array and a size, and contains the methods
+    oneMore, enqueue, dequeue, peek, isEmpty, size, clear, equals, and toString.
+
+    USAGE EXAMPLE:
+    ArrayQueue q = new ArrayQueue();
+    q.enqueue(1);
+    q.enqueue(9);
+    q.enqueue(3);
+    System.out.println(q.toString());
+
+    int bye = q.dequeue();
+    System.out.println(q.toString());
+    System.out.println("removed element: " + bye);
+
+    System.out.println("peek " + q.peek());
+
+    ArrayQueue q2 = new ArrayQueue();
+    System.out.println(q.isEmpty());
+    System.out.println(q2.isEmpty());
+        
+    q.clear();
+    System.out.println(q.toString());
+
+    OUTPUT:
+    {1,9,3}
+    {9,3}
+    removed element: 1
+    peek 9
+    false
+    true
+    {}
+*/
+
 public class ArrayQueue implements QueueInterface {
 
     // fields
@@ -19,7 +58,7 @@ public class ArrayQueue implements QueueInterface {
         }
     }
 
-    public int[] oneMore(int[] queue) {
+    private int[] oneMore(int[] queue) {
         int[] newQueue = new int[size];
         for (int i = 0; i < size - 1; i++) {
             newQueue[i] = queue[i];
@@ -28,7 +67,7 @@ public class ArrayQueue implements QueueInterface {
     }
 
     @Override
-    public void enqueuez(int value) {
+    public void enqueue(int value) {
         int[] newQueue;
         size++;
         if (size == 1) {
